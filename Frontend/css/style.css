@@ -1,0 +1,58 @@
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+body{line-height:1.5;color:#20323a;background:#f7faf7}
+header{background:linear-gradient(rgba(10,20,25,0.35),rgba(10,20,25,0.15)), url('https://images.unsplash.com/photo-1547444361-9b0f7b9c9d29?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=') center/cover no-repeat;min-height:44vh;display:flex;align-items:center;padding-bottom:18px}
+.container{width:min(1100px,94%);margin:0 auto}
+
+/* Navbar */
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:700;color:#fff;letter-spacing:0.3px}
+.nav-links{display:flex;gap:12px}
+.nav-links a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.06)}
+.nav-links a.cta{background:#ffb100;color:#082027;font-weight:600}
+
+/* Hero & headings */
+h1,h2{color:#082027}
+.hero{display:flex;flex-direction:column;gap:18px;padding:28px 0;color:#fff}
+.hero h1{font-size:clamp(24px,5vw,44px);line-height:1.02}
+.hero p{max-width:70ch;opacity:0.95}
+
+/* Buttons */
+.btn{background:#ffb100;color:#082027;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600;border:0;cursor:pointer}
+.btn.secondary{background:transparent;border:2px solid rgba(255,255,255,0.9);color:#fff}
+
+/* Layout */
+main.container{padding:28px 0}
+section.intro p, section.intro a{color:#2b3b3a}
+
+/* Products */
+section.products{padding:24px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#fff;border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(17,28,32,0.06);display:flex;flex-direction:column;gap:8px}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+.card h3{font-size:18px;margin-top:6px}
+.price{font-weight:700;color:#0b5133}
+.card button{margin-top:auto;background:#0b8a56;color:#fff;padding:10px;border-radius:8px;border:0;cursor:pointer}
+
+/* Forms */
+input, textarea {font-family:inherit;font-size:15px}
+label{font-weight:600;color:#0b5133}
+
+/* Cart */
+.cart-btn{position:fixed;right:18px;bottom:18px;background:#ffb100;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.12);cursor:pointer;z-index:1200}
+.cart-count{position:absolute;right:-6px;top:-6px;background:#e23b3b;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:12px}
+
+/* Footer */
+footer{background:#082027;color:#dfeee6;padding:18px 0;margin-top:38px}
+
+/* Checkout modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,8,0.6);padding:28px;z-index:1300}
+.modal.open{display:flex}
+.modal-card{background:#fff;border-radius:12px;padding:18px;max-width:780px;width:100%}
+
+/* Responsive tweaks */
+@media(min-width:900px){
+  .hero{flex-direction:row;justify-content:space-between;align-items:center}
+  .hero-left{max-width:55%}
+}
+

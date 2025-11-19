@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — GreenYard Poultry</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">GreenYard Poultry</div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section style="padding:28px 0; max-width:800px; margin:0 auto;">
+      <h2>Contact Us</h2>
+      <p style="margin-top:10px;">If you want to contact us, please fill the form below and we'll send your message to the farm email.</p>
+
+      <form id="contactForm" style="margin-top:12px;">
+        <label style="display:block;margin-top:8px">Name</label>
+        <input name="name" required style="width:100%;padding:10px;border-radius:6px;border:1px solid #ddd" />
+        <label style="display:block;margin-top:8px">Email</label>
+        <input name="email" type="email" required style="width:100%;padding:10px;border-radius:6px;border:1px solid #ddd" />
+        <label style="display:block;margin-top:8px">Message</label>
+        <textarea name="message" required style="width:100%;padding:10px;border-radius:6px;border:1px solid #ddd;min-height:120px"></textarea>
+        <div style="margin-top:12px; display:flex; gap:8px; align-items:center;">
+          <button type="submit" class="btn">Send Message</button>
+          <div id="contactStatus" style="font-size:14px;color:#0b5133;"></div>
+        </div>
+      </form>
+
+      <p style="margin-top:18px">Or contact via WhatsApp: +254 700 000 000 (example)</p>
+      <p style="margin-top:6px">Or call: +254 700 000 001 (example)</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <strong>GreenYard Poultry</strong><br>
+        Fresh broilers • layers • eggs • manure
+      </div>
+      <div style="opacity:0.9">© 2025 GreenYard Poultry</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
