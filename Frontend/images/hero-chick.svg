@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff6d6"/>
+      <stop offset="1" stop-color="#ffd47a"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g2)" />
+  <g transform="translate(40,40)" font-family="Poppins, sans-serif">
+    <circle cx="200" cy="260" r="120" fill="#fff8e6" stroke="#f0c36b" stroke-width="6"/>
+    <circle cx="220" cy="240" r="12" fill="#b85a00"/>
+    <path d="M160 340 Q220 380 300 340" fill="#ffd47a"/>
+    <text x="450" y="520" font-size="36" fill="#b67f00" font-weight="700">Little Chick</text>
+  </g>
+</svg>
