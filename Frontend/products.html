@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Products — GreenYard Poultry</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -13,7 +14,7 @@
                     <div class="logo">GreenYard Poultry</div>
                     <div class="nav-links">
                         <a href="index.html">Home</a>
-                        <a href="about.html">About</a>
+                        <a href="products.html">Products</a>
                         <a href="contact.html">Contact</a>
                     </div>
                 </nav>
@@ -22,8 +23,10 @@
 
         <main class="container">
             <section id="products" class="products">
-                <h2 style="margin:18px 0 12px;">Our Products</h2>
-                <div class="grid" id="productGrid"></div>
+                <div class="products-inner container">
+                    <h2 class="product-title">Our Products</h2>
+                    <div class="grid" id="productGrid"></div>
+                </div>
             </section>
         </main>
             
@@ -37,12 +40,12 @@
         <div class="modal" id="cartModal" aria-hidden="true">
             <div class="modal-card">
                 <h3>Your Cart</h3>
-                <div id="cartItems" style="margin-top:10px"></div>
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+                <div id="cartItems" class="cart-items-container"></div>
+                <div class="cart-footer">
                     <div><strong>Total:</strong> KES <span id="cartTotal">0</span></div>
                     <div>
                         <button id="checkoutBtn" class="btn">Checkout</button>
-                        <button id="closeCart" style="margin-left:8px;padding:10px;border-radius:8px;border:1px solid #ddd;background:#fff;">Close</button>
+                        <button id="closeCart" class="btn-close">Close</button>
                     </div>
                 </div>
             </div>
@@ -52,17 +55,17 @@
             <div class="modal-card">
                 <h3>Checkout</h3>
                 <form id="checkoutForm">
-                    <label style="display:block;margin-top:8px">Full name</label>
-                    <input name="name" required />
-                    <label style="display:block;margin-top:8px">Phone / WhatsApp</label>
-                    <input name="phone" required />
-                    <label style="display:block;margin-top:8px">Delivery address</label>
-                    <textarea name="address" required></textarea>
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+                    <label class="form-group">Full name</label>
+                    <input name="name" class="form-input" required />
+                    <label class="form-group">Phone / WhatsApp</label>
+                    <input name="phone" class="form-input" required />
+                    <label class="form-group">Delivery address</label>
+                    <textarea name="address" class="form-input" required></textarea>
+                    <div class="checkout-footer">
                         <div><strong>Total:</strong> KES <span id="checkoutTotal">0</span></div>
                         <div>
                             <button type="submit" class="btn">Place Order</button>
-                            <button type="button" id="cancelCheckout" style="margin-left:8px;padding:10px;border-radius:8px;border:1px solid #ddd;background:#fff;">Cancel</button>
+                            <button type="button" id="cancelCheckout" class="btn-close">Cancel</button>
                         </div>
                     </div>
                 </form>
@@ -70,12 +73,12 @@
         </div>
 
         <footer>
-            <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+            <div class="footer-container container">
                 <div>
                     <strong>GreenYard Poultry</strong><br>
                     Fresh broilers • layers • eggs • manure
                 </div>
-                <div style="opacity:0.9">© 2025 GreenYard Poultry</div>
+                <div class="footer-copyright">© 2025 GreenYard Poultry</div>
             </div>
         </footer>
 
