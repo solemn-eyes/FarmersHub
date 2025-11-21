@@ -1,9 +1,9 @@
 /* Shared product list used by both index and products pages */
 const products = [
-    {id:1,name:'Broiler (per bird)',price:700,image:'https://images.unsplash.com/photo-1547444361-9b0f7b9c9d29?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s='},
-    {id:2,name:'Layer (per bird)',price:950,image:'https://images.unsplash.com/photo-1560807707-8cc77767d783?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s='},
-    {id:3,name:'Fresh Eggs (tray of 30)',price:350,image:'https://www.citypng.com/public/uploads/preview/-11596307294h1l6kpc9pm.png'},
-    {id:4,name:'Chicken Manure (25kg bag)',price:500,image:'https://gratisography.com/wp-content/uploads/2018/01/free-range-chicken-farm.jpg'}
+    {id:1,name:'Broiler (per bird)',price:700,image:'images/broiler.svg'},
+    {id:2,name:'Layer (per bird)',price:950,image:'images/layer.svg'},
+    {id:3,name:'Fresh Eggs (tray of 30)',price:350,image:'images/eggs.svg'},
+    {id:4,name:'Chicken Manure (25kg bag)',price:500,image:'images/manure.svg'}
   ];
   
   function renderProductsGrid(containerId='productGrid'){
