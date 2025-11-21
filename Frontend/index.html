@@ -7,49 +7,86 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <header>
-            <div class="container">
-                <nav>
-                    <div class="logo">GreenYard Poultry</div>
-                    <div class="nav-links">
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">GreenYard Poultry</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
                     <a href="products.html">Products</a>
-                    <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
-                    <a class="cta" href="products.html">Shop Now</a>
-                    </div> 
-                </nav>
-
-                <div class="hero">
-                    <div class="hero-left">
-                        <h1>Fresh, Healthy Poultry Products — Straight from Our Farm</h1>
-                        <p>We raise free-range broilers and layers, collect fresh eggs daily and produce nutrient-rich chicken manure — delivered responsibly in our local area.</p>
-                        <div class="buttons">
-                            <a class="btn" href="products.html">Shop Now</a>
-                            <a class="btn secondary" href="about.html">Learn More</a>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </header>
+            </nav>
+        </div>
+    </header>
 
 
     <main class="container">
-        <section class="intro" style="padding:28px 0">
-            <h2>Welcome to GreenYard Poultry</h2>
-            <p style="margin-top:10px;">Family-run farm providing healthy broilers, layers, fresh eggs and nutrient-rich chicken manure to our local community.</p>
-            <p style="margin-top:10px;"><a href="contact.html">If you want to contact us, go to the contact page</a>.</p>
-        </section>
-
-
-        <section style="padding:28px 0">
-            <h2>Featured Products</h2>
-            <div class="grid" id="productGrid">
-            <!-- Products rendered by JS (same list as on products.html) -->
+           <!-- Section 1: Hero text + buttons (background can be added later)
+               Add background via CSS, for example:
+               /* .hero-text-section { background: url('images/hero-text-bg.jpg') center/cover no-repeat; } */ -->
+           <section class="hero-text-section">
+            <div class="hero-text">
+                <h1>Fresh, Healthy Poultry Products — Straight from Our Farm</h1>
+                <p>We are a family-run farm led by Joseph — a third-generation farmer who believes in humane, sustainable poultry practices. Our birds graze outdoors, we collect fresh eggs daily, and we treat our customers like neighbours.</p>
+                <div class="buttons">
+                    <a class="btn" href="products.html">Shop Now</a>
+                    <a class="btn secondary" href="contact.html">Contact Us</a>
+                </div>
             </div>
         </section>
-    </main>
 
-    <div class="cart-btn" id="openCart" title="Open cart">
+           <!-- Section 2: Hero media (images). Add background via CSS, for example:
+               /* .hero-media-section { background: url('images/hero-media-bg.jpg') center/cover no-repeat; } */ -->
+           <section class="hero-media-section">
+            <div class="hero-media">
+                <div class="hero-item hero-item-left">
+                    <picture>
+                        <source srcset="images/Chicken1.webp" type="image/webp">
+                        <img class="hero-img chicken" src="images/hero-chicken.svg" alt="Broiler chicken" loading="lazy" decoding="async" width="220" height="220" srcset="images/Chicken1.webp 220w, images/hero-chicken.svg 220w" sizes="(max-width:600px) 160px, 220px">
+                    </picture>
+                    <div class="hero-description">
+                        <h3>Broiler Chickens</h3>
+                        <p>Our broilers are raised with care in open spaces, fed premium grain and allowed to grow naturally. Each bird is healthy, well-nourished, and ready for your table.</p>
+                    </div>
+                </div>
+
+                <div class="hero-item hero-item-right">
+                    <div class="hero-description">
+                        <h3>Fresh Chicks</h3>
+                        <p>Growing up healthy on our farm, our chicks are part of a nurturing environment. We pride ourselves on raising strong, vibrant birds that will thrive for years.</p>
+                    </div>
+                    <picture>
+                        <source srcset="images/Chicks1.jpg" type="image/jpeg">
+                        <img class="hero-img chick" src="images/hero-chick.svg" alt="Chick" loading="lazy" decoding="async" width="220" height="220" srcset="images/Chicks1.jpg 220w, images/hero-chick.svg 220w" sizes="(max-width:600px) 160px, 220px">
+                    </picture>
+                </div>
+
+                <div class="hero-item hero-item-left">
+                    <picture>
+                        <source srcset="images/EggsFarmer2.avif" type="image/avif">
+                        <img class="hero-img farmer" src="images/hero-farmer.svg" alt="Farmer" loading="lazy" decoding="async" width="220" height="220" srcset="images/EggsFarmer2.avif 220w, images/hero-farmer.svg 220w" sizes="(max-width:600px) 160px, 220px">
+                    </picture>
+                    <div class="hero-description">
+                        <h3>Family Farming</h3>
+                        <p>Led by Joseph, our third-generation farmer brings decades of wisdom to sustainable poultry farming. We treat every bird and customer as part of our extended family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+           <!-- Section 3: Intro (separate background can be added later)
+               Add background via CSS, for example:
+               /* .intro-section { background: url('images/intro-bg.jpg') center/cover no-repeat; } */ -->
+           <section class="section-intro intro-section">
+            <h2>Welcome to GreenYard Poultry</h2>
+            <p>Family-run farm providing healthy broilers, layers, fresh eggs and nutrient-rich chicken manure to our local community.</p>
+            <p><a href="contact.html">If you want to contact us, go to the contact page</a>.</p>
+        </section>
+
+
+        <!-- Featured products removed from homepage; products are available on products.html -->
+    </main>    <div class="cart-btn" id="openCart" title="Open cart">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44C8.89 16.37 9.35 17 10 17h8v-2h-7.42c-.14 0-.25-.11-.25-.25L12.1 12h5.45c.75 0 1.41-.41 1.75-1.03L21.6 6.6C21.78 6.19 21.62 5.71 21.22 5.5 20.82 5.29 20.33 5.44 20.14 5.85L18 10H6.21L5.27 8H3v2h1l1.6 3.2L7 4z" fill="#082027"/></svg>
         <div class="cart-count" id="cartCount">0</div>
     </div>
@@ -59,12 +96,12 @@
     <div class="modal" id="cartModal" aria-hidden="true">
         <div class="modal-card">
             <h3>Your Cart</h3>
-            <div id="cartItems" style="margin-top:10px"></div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <div id="cartItems" class="cart-items-container"></div>
+            <div class="cart-footer">
                 <div><strong>Total:</strong> KES <span id="cartTotal">0</span></div>
             <div>
             <button id="checkoutBtn" class="btn">Checkout</button>
-            <button id="closeCart" style="margin-left:8px;padding:10px;border-radius:8px;border:1px solid #ddd;background:#fff;">Close</button>
+            <button id="closeCart" class="btn-close">Close</button>
         </div>
     </div>
     </div>
@@ -75,17 +112,17 @@
     <div class="modal-card">
     <h3>Checkout</h3>
     <form id="checkoutForm">
-    <label style="display:block;margin-top:8px">Full name</label>
-    <input name="name" required />
-    <label style="display:block;margin-top:8px">Phone / WhatsApp</label>
-    <input name="phone" required />
-    <label style="display:block;margin-top:8px">Delivery address</label>
-    <textarea name="address" required></textarea>
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+    <label class="form-group">Full name</label>
+    <input name="name" class="form-input" required />
+    <label class="form-group">Phone / WhatsApp</label>
+    <input name="phone" class="form-input" required />
+    <label class="form-group">Delivery address</label>
+    <textarea name="address" class="form-input" required></textarea>
+    <div class="checkout-footer">
     <div><strong>Total:</strong> KES <span id="checkoutTotal">0</span></div>
     <div>
     <button type="submit" class="btn">Place Order</button>
-    <button type="button" id="cancelCheckout" style="margin-left:8px;padding:10px;border-radius:8px;border:1px solid #ddd;background:#fff;">Cancel</button>
+    <button type="button" id="cancelCheckout" class="btn-close">Cancel</button>
     </div>
     </div>
     </form>
@@ -93,12 +130,12 @@
     </div>
 
     <footer>
-        <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+        <div class="footer-container container">
             <div>
                 <strong>GreenYard Poultry</strong><br>
                 Fresh broilers • layers • eggs • manure
             </div>
-        <div style="opacity:0.9">© 2025 GreenYard Poultry</div>
+        <div class="footer-copyright">© 2025 GreenYard Poultry</div>
         </div>
     </footer>
         
