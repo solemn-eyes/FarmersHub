@@ -1,49 +1,175 @@
 /* Reset */
+:root { --header-height: 100px; }
 *{box-sizing:border-box;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
 body{line-height:1.5;color:#20323a;background:#f7faf7}
-header{background:linear-gradient(rgba(10,20,25,0.35),rgba(10,20,25,0.15)), url('https://images.unsplash.com/photo-1547444361-9b0f7b9c9d29?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=') center/cover no-repeat;min-height:44vh;display:flex;align-items:center;padding-bottom:18px}
+/* Header uses a fixed height variable so sections can calculate remaining viewport */
+html,body{overflow-x:hidden}
+header{background: url('../images/HeroFarmer2.avif') center/cover no-repeat;position:fixed;left:0;right:0;top:0;background-attachment:fixed;height:var(--header-height);z-index:1100}
+header::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(2,6,8,0.65),rgba(2,6,8,0.45));pointer-events:none}
+header .container{height:100%;display:flex;align-items:center}
 .container{width:min(1100px,94%);margin:0 auto}
 
 /* Navbar */
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;width:100%}
 .logo{font-weight:700;color:#fff;letter-spacing:0.3px}
 .nav-links{display:flex;gap:12px}
 .nav-links a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.06)}
 .nav-links a.cta{background:#ffb100;color:#082027;font-weight:600}
-
-/* Hero & headings */
+.nav-links{display:flex;gap:12px}
+.nav-links a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.06)}
+.nav-links a.cta{background:#ffb100;color:#082027;font-weight:600}
+.logo{font-weight:700;color:#fff;letter-spacing:0.6px;font-size:20px;text-shadow:0 2px 8px rgba(0,0,0,0.35)}
+.nav-links{display:flex;gap:14px;margin-left:auto}
+nav{display:flex;align-items:center;padding:20px 0;width:100%}
+.nav-links a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 12px;border-radius:8px;background:transparent;font-weight:600}
+.nav-links a:hover{background:rgba(255,255,255,0.08)}
+.nav-links a.cta{background:var(--accent);color:#fff;font-weight:700}
 h1,h2{color:#082027}
 .hero{display:flex;flex-direction:column;gap:18px;padding:28px 0;color:#fff}
 .hero h1{font-size:clamp(24px,5vw,44px);line-height:1.02}
 .hero p{max-width:70ch;opacity:0.95}
+.hero{height:52vh;display:flex;flex-direction:column;gap:12px;padding:0 20px;color:#fff;align-items:center;justify-content:center;text-align:center}
+.hero h1{font-size:clamp(28px,5vw,48px);line-height:1.02;margin-bottom:8px;text-shadow:0 6px 20px rgba(0,0,0,0.45)}
+.hero p{max-width:64ch;opacity:0.95;margin:0 auto;color:rgba(255,255,255,0.95);text-shadow:0 4px 14px rgba(0,0,0,0.35)}
+
+/* Hero media (three items with alternating layout) */
+.hero-media{display:flex;flex-direction:column;gap:48px;padding:48px 0;margin:0 auto}
+
+.hero-item{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:32px}
+
+.hero-item-left{grid-template-columns:auto 1fr}
+
+.hero-item-right{grid-template-columns:1fr auto}
+
+.hero-img{width:220px;height:220px;object-fit:cover;border-radius:12px;box-shadow:0 20px 40px rgba(4,7,10,0.45);transform:translateY(0);transition:transform .35s ease, box-shadow .35s ease;display:block;margin:0 auto}
+
+.hero-img.chicken{transform:translateY(-6px) rotate(-3deg)}
+
+.hero-img.chick{transform:translateY(6px) rotate(2deg);width:180px;height:180px}
+
+.hero-img.farmer{transform:translateY(10px) rotate(3deg)}
+
+.hero-img:hover{transform:translateY(-4px) scale(1.03)}
+
+.hero-description{padding:20px}
+
+.hero-description h3{font-size:24px;font-weight:700;color:#082027;margin-bottom:12px}
+
+.hero-description p{color:#6b7a78;line-height:1.6}
+
+/* Center hero text and buttons */
+.hero-text{ text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center }
+.buttons{ display:flex; gap:12px; justify-content:center; margin-top:12px }
+
+@media(max-width:900px){
+  .hero-item, .hero-item-left, .hero-item-right{grid-template-columns:1fr;gap:16px}
+  .hero-img{width:180px;height:180px}
+  .hero-description{padding:12px 0}
+}
+
+/* Section placeholders so backgrounds can be added later */
+.hero-text-section{padding:56px 0}
+.hero-media-section{padding:48px 0}
+.intro-section{padding:28px 0}
+
+/* Background helpers: replace the image paths below with your files
+  Example usage (uncomment and change path):
+  .hero-text-section { background: url('../images/hero-text-bg.jpg') center/cover no-repeat; }
+  .hero-media-section { background: url('../images/hero-media-bg.jpg') center/cover no-repeat; }
+  .intro-section { background: url('../images/intro-bg.jpg') center/cover no-repeat; }
+*/
 
 /* Buttons */
 .btn{background:#ffb100;color:#082027;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600;border:0;cursor:pointer}
 .btn.secondary{background:transparent;border:2px solid rgba(255,255,255,0.9);color:#fff}
 
 /* Layout */
-main.container{padding:28px 0}
+/* ensure main content sits below fixed header */
+main.container{padding-top:calc(var(--header-height) + 28px);padding-bottom:28px}
 section.intro p, section.intro a{color:#2b3b3a}
 
 /* Products */
-section.products{padding:24px 0}
+.section-products{padding:32px 0}
+/* Products section background (HeroFarmer3) with overlay to increase text contrast */
+section.products{position:relative;background: url('../images/HeroFarmer3.jpg') center/cover no-repeat;color:#fff;background-attachment:fixed}
+section.products::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(2,6,8,0.6),rgba(2,6,8,0.35));pointer-events:none}
+/* Make products section full-bleed and use overlay like contact */
+/* Make the products section fill remaining viewport height beneath the header.
+  Adjust the 100px value if your header's height changes. */
+section.products{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding:48px 20px;min-height:calc(100vh - var(--header-height));display:flex;align-items:center}
+section.products *{position:relative;z-index:2}
+section.products .products-inner{width:100%}
+section.products .product-title, section.products h2{color:#fff}
+
+/* Subtle inner card behind the product grid so items read clearly over the background */
+section.products .products-inner .grid{background:rgba(255,255,255,0.95);padding:18px;border-radius:12px;box-shadow:0 12px 30px rgba(2,6,8,0.08)}
+section.products .products-inner .grid .card{background:#fff}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
 .card{background:#fff;border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(17,28,32,0.06);display:flex;flex-direction:column;gap:8px}
 .card img{width:100%;height:180px;object-fit:cover;border-radius:10px}
 .card h3{font-size:18px;margin-top:6px}
-.price{font-weight:700;color:#0b5133}
-.card button{margin-top:auto;background:#0b8a56;color:#fff;padding:10px;border-radius:8px;border:0;cursor:pointer}
+.price{font-weight:700;color:var(--accent-dark)}
+.card button{margin-top:auto;background:var(--accent-dark);color:#fff;padding:10px;border-radius:8px;border:0;cursor:pointer}
 
 /* Forms */
 input, textarea {font-family:inherit;font-size:15px}
 label{font-weight:600;color:#0b5133}
+
+/* Section & spacing utilities */
+.section-intro{padding:28px 0}
+.section-intro p{color:#2b3b3a;margin-top:10px}
+.section-intro p a{color:#082027;text-decoration:underline}
+
+.section-main{padding:28px 0}
+
+/* Make contact section full-bleed and cover viewport while keeping inner content constrained */
+.section-contact{position:relative;background: url('../images/HeroFarmer1.jpg') center/cover no-repeat;color:#fff;background-attachment:fixed}
+.section-contact::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(2,6,8,0.7),rgba(2,6,8,0.4));pointer-events:none}
+.section-contact{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);min-height:calc(100vh - var(--header-height));display:flex;align-items:center;padding:80px 20px}
+.section-contact p{margin-top:10px}
+
+/* Contact page background (HeroFarmer1) with overlay; inputs get light background for readability */
+@media (max-width: 900px){
+  header, section.products, .section-contact{background-attachment:scroll}
+}
+.section-contact *{position:relative;z-index:2}
+.section-contact label{color:#fff}
+.section-contact input.form-input, .section-contact textarea.form-input{background:rgba(255,255,255,0.95)}
+
+.section-contact .contact-inner{max-width:900px;margin:0 auto;padding:8px}
+
+.form-wrapper{margin-top:12px}
+
+/* Form styling utilities */
+.form-group{display:block;margin-top:8px}
+input.form-input, textarea.form-input{width:100%;padding:10px;border-radius:6px;border:1px solid #ddd}
+
+/* Modal & cart styling */
+.cart-items-container{margin-top:10px}
+.cart-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.btn-close{margin-left:8px;padding:10px;border-radius:8px;border:1px solid #ddd;background:#fff;cursor:pointer}
+.btn-close:hover{background:#f5f5f5}
+
+.checkout-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+
+.contact-form-footer{margin-top:12px;display:flex;gap:8px;align-items:center}
+.contact-status{font-size:14px;color:#0b5133}
+
+.contact-info p{margin-top:18px}
+.contact-info p:last-child{margin-top:6px}
+
+/* Footer utilities */
+.footer-container{display:flex;justify-content:space-between;align-items:center}
+.footer-copyright{opacity:0.9}
+
+.product-title{margin:18px 0 12px}
 
 /* Cart */
 .cart-btn{position:fixed;right:18px;bottom:18px;background:#ffb100;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.12);cursor:pointer;z-index:1200}
 .cart-count{position:absolute;right:-6px;top:-6px;background:#e23b3b;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:12px}
 
 /* Footer */
-footer{background:#082027;color:#dfeee6;padding:18px 0;margin-top:38px}
+footer{background:rgba(3,8,10,0.9);color:#e6efe8;padding:22px 0;margin-top:38px}
 
 /* Checkout modal */
 .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,8,0.6);padding:28px;z-index:1300}
