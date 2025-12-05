@@ -81,7 +81,7 @@ h1,h2{color:#082027}
 
 /* Buttons */
 .btn{background:#ffb100;color:#082027;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600;border:0;cursor:pointer}
-.btn.secondary{background:transparent;border:2px solid rgba(255,255,255,0.9);color:#fff}
+.btn.secondary{background:transparent;border:2px solid #ebae07e6;color:hsla(0, 0%, 0%, 0.84)}
 
 /* Layout */
 /* ensure main content sits below fixed header */
